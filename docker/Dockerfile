@@ -15,9 +15,14 @@ RUN pacman -Syu --noconfirm \
     && pacman -Scc --noconfirm
 
 # Install noVNC and websockify
-RUN pip install websockify && \
+RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install websockify && \
     git clone https://github.com/novnc/noVNC.git /opt/novnc && \
     ln -s /opt/novnc/vnc.html /opt/novnc/index.html
+
+# Add virtual environment to PATH
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Set VNC password dynamically from .env
 COPY .env /root/.env
