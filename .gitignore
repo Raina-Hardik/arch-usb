@@ -1,0 +1,48 @@
+# Ignore personal files and sensitive data
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.old
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# Ignore compiled files
+*.o
+*.out
+*.class
+*.pyc
+*.pyo
+*.exe
+*.dll
+
+# Ignore Docker-related files
+**/docker-compose.override.yml
+**/Dockerfile.local
+
+# Ignore USB deployment artifacts
+usb/arch-install/*.iso
+usb/system-configs/*.img
+
+# Ignore node_modules and dependencies
+node_modules/
+
+# Ignore Git-specific files
+.git/
+
+
+# Ignore temporary files
+config/**/*.tmp
+config/**/*.bak
+
+# Ignore other temporary or backup files
+bin/*.old
+bin/*.bak
