@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  arch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arch
+    volumes:
+      - ../:/workspace
+    ports:
+      - "5901:5901"    # VNC
+      - "6080:6080"    # noVNC
+    environment:
+      - VNC_PASSWORD=${VNC_PASSWORD}
+
+  arch-usb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arch-usb
+    volumes:
+      - ../:/workspace
+    ports:
+      - "5902:5901"    # VNC
+      - "6081:6080"    # noVNC
+    environment:
+      - VNC_PASSWORD=${VNC_PASSWORD}
